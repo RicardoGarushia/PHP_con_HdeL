@@ -1,0 +1,38 @@
+# ============================================================
+# CONFIGURACIÓN DE SEGURIDAD
+# ============================================================
+
+# 1. SEGURIDAD DE DIRECTORIO
+
+# Options -Indexes    # Colocar el símbolo "#" para apagar o encender la opción
+# 'Options -Indexes' apaga el interruptor de "Listado Automático".
+# Evita que, si no hay un index.php, el navegador muestre la lista
+# de archivos como si fuera una carpeta de Windows.
+
+# Options +Indexes  # Colocar el símbolo "#" para apagar o encender la opción
+# 'Options +Indexes' enciendo el interruptor de "Listado Automático".
+# Muestre la lista de archivos como si fuera una carpeta de Windows.
+
+
+DirectoryIndex      # Colocar el símbolo "#" para apagar o encender la opción
+# 'DirectoryIndex' define qué archivo debe cargar el servidor por defecto 
+# cuando alguien entra a una carpeta sin especificar un archivo.
+
+ErrorDocument
+# 'ErrorDocument #códigoDeEstadoHTTP urlArchivo' Permite mostrar una página bonita cuando algo sale mal (como el error 404 o el 403), en lugar del texto feo del servidor.
+
+# 2. PROTECCIÓN DE DATOS SENSIBLES
+# El contenedor <Files> aplica reglas solo a archivos específicos.
+# El asterisco (*) es un comodín que significa "cualquier nombre".
+<Files "*.json">
+    # 'Order Allow,Deny' establece el orden de evaluación de reglas.
+    # Primero procesa quién puede entrar, luego quién tiene prohibido.
+    Order Allow,Deny
+    
+    # 'Deny from all' es el cerrojo final. Bloquea el acceso externo
+    # vía HTTP (navegadores), pero permite el acceso interno de PHP.
+    Deny from all
+</Files>
+
+# Nota: Puedes repetir este bloque para proteger otros archivos
+# como *.txt o *.log si fuera necesario en el futuro.

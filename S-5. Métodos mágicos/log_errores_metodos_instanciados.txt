@@ -1,0 +1,21 @@
+Occurió un error con el método: 'usarHabilidad' 
+Sus argumentos eran:  'CorteMortal' 
+2025-10-04 03:50:19
+Occurió un error con el método: 'usarHabilidad' 
+Sus argumentos eran:  'CorteMortal' 
+2025-10-04 03:52:12
+Occurió un error con el método: 'usarHabilidad' 
+Sus argumentos eran:  'CorteMortal' 
+2025-10-04 03:52:14
+Occurió un error con el método: 'usarHabilidad' 
+Sus argumentos eran:  'CorteMortal' 
+2025-10-04 03:52:15
+Occurió un error con el método: 'usarHabilidad' 
+Sus argumentos eran:  'CorteMortal' 
+2025-10-04 03:52:18
+Occurió un error con el método: 'usarHabilidad' 
+Sus argumentos eran:  'CorteMortal, Array' 
+2025-10-04 03:55:22
+Occurió un error con el método: 'usarHabilidad' 
+Sus argumentos eran:  'CorteMortal, Array' 
+2025-10-04 03:55:23

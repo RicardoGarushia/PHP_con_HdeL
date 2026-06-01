@@ -1,0 +1,30 @@
+{
+    "GALR901123HDFRPC03": {
+        "curp": "GALR901123HDFRPC03",
+        "nombre": "Ricardo Leonardo",
+        "apellidoP": "Garc\u00eda",
+        "apellidoM": "L\u00f3pez",
+        "nivel": "premium"
+    },
+    "MAMM901123MDFRPC03": {
+        "curp": "MAMM901123MDFRPC03",
+        "nombre": "Maomao",
+        "apellidoP": "La",
+        "apellidoM": "Mao",
+        "nivel": "premium"
+    },
+    "FRLA901123MDFRPC03": {
+        "curp": "FRLA901123MDFRPC03",
+        "nombre": "Frieren",
+        "apellidoP": "La",
+        "apellidoM": "Aniquiladora",
+        "nivel": "premium"
+    },
+    "GALR901123MDFRPC03": {
+        "curp": "GALR901123MDFRPC03",
+        "nombre": "Ricardito Leonardito",
+        "apellidoP": "Garc\u00eda",
+        "apellidoM": "L\u00f3pez",
+        "nivel": "premium"
+    }
+}

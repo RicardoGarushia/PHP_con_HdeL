@@ -1,0 +1,6 @@
+Occurió un error con el método: 'guardarEstado' 
+Sus argumentos eran: Guardado rápido, Array 
+2025-10-04 03:56:37
+Occurió un error con el método: 'guardarEstado' 
+Sus argumentos eran: ["Guardado rápido",["Jugador","Mapa 3"]] 
+2025-10-04 04:00:24
