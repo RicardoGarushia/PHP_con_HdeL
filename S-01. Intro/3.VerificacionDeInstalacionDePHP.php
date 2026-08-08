@@ -4,5 +4,4 @@
 // Es una herramienta útil para verificar que tu entorno de desarrollo esté configurado correctamente y 
 // para diagnosticar problemas relacionados con la configuración de PHP.
 phpinfo();
-
 ?>

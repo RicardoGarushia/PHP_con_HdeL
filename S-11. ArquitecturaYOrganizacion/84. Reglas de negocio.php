@@ -14,8 +14,10 @@ que definen cómo funciona una empresa o una situación específica en la vida r
 independientemente de la tecnología que uses.\n\n";
 
 echo "Si mañana decidieras dejar de usar PHP 
-y lo hicieras todo en papel o con otra herramienta, esas reglas seguirían siendo las mismas. 
-Son el \"corazón\" de tu aplicación.\n\n\n\n";
+y lo hicieras todo en papel o con otra herramienta, 
+esas reglas seguirían siendo las mismas.\n\n";
+
+echo "Las REGLAS DE NEGOCIO son el \"corazón\" de tu aplicación.\n\n\n\n";
 
 
 
@@ -59,7 +61,7 @@ Especifican cómo se deben realizar ciertos cálculos
 
 
 
-echo "84.3. IMPORTANCIA DE LAS REGLAS DE NEGOCIO\n\n";
+echo "84.4. IMPORTANCIA DE LAS REGLAS DE NEGOCIO\n\n";
 
 echo "Las REGLAS DE NEGOCIO son fundamentales porque:
 1. Definen el valor que tu aplicación ofrece a los usuarios.
@@ -68,7 +70,7 @@ echo "Las REGLAS DE NEGOCIO son fundamentales porque:
 
 
 
-echo "84.4. REGLAS DE NEGOCIO Y ARQUITECTURA DE SOFTWARE\n\n";  
+echo "84.5. REGLAS DE NEGOCIO Y ARQUITECTURA DE SOFTWARE\n\n";  
 
 echo "Las REGLAS DE NEGOCIO influyen directamente en la ARQUITECTURA DE SOFTWARE de tu aplicación,
 ya que determinan qué funcionalidades y procesos deben implementarse,
@@ -77,47 +79,48 @@ y cómo deben interactuar entre sí.\n\n";
 echo "Una buena arquitectura de software debe estar diseñada para
 soportar y facilitar la implementación de las reglas de negocio,
 asegurando que la aplicación sea flexible, escalable y fácil de mantener 
-a medida que evolucionan las necesidades de la empresa o situación que estás abordando.\n\n";
+a medida que evolucionan las necesidades de la empresa o situación que estás abordando.\n\n\n\n";
 
-echo "LA ARQUITECTURA EXISTE PARA PROTEGER LAS REGLAS DE NEGOCIO.\n\n";
 
-echo "Imagina que las reglas de negocio son una joya valiosa. 
-La arquitectura es la caja fuerte y el sistema de seguridad que la rodea.\n\n";
 
-echo "Si la arquitectura es débil o mal diseñada,
-la joya (reglas de negocio) estará en riesgo de ser robada, dañada o difícil de acceder cuando se necesite.\n\n";
+echo "84.6. LA ARQUITECTURA DEBE PROTEGER LAS REGLAS DE NEGOCIO.\n\n";
 
-echo "Por eso es crucial diseñar una arquitectura de software sólida y bien pensada,
-que proteja y facilite el acceso a las reglas de negocio,
+echo "Imagina que las REGLAS DE NEGOCIO son unas joyas valiosas. 
+La ARQUITECTURA es la caja fuerte y el sistema de seguridad que las rodea.\n\n";
+
+echo "Si la ARQUITECTURA es débil o mal diseñada,
+las joyas (REGLAS DE NEGOCIO) estarán en riesgo de ser robadas, dañadas o difíciles de acceder cuando se necesiten.\n\n";
+
+echo "Por eso es crucial diseñar una ARQUITECTURA DE SOFTWARE sólida y bien pensada para que proteja y facilite el acceso a las REGLAS DE NEGOCIO,
 permitiendo que tu aplicación cumpla con su propósito de manera efectiva y eficiente.\n\n\n\n";
 
 
 
-echo "84.5. CONCLUSIÓN\n\n";
+echo "84.7. CONCLUSIÓN\n\n";
 
 echo "Las REGLAS DE NEGOCIO son el corazón de tu aplicación,
 definiendo el valor que ofrece a los usuarios y guiando el desarrollo técnico.\n\n"; 
 
 echo "Una buena arquitectura de software debe estar diseñada para 
-proteger y facilitar la implementación de estas reglas,
+proteger y facilitar la implementación de estas REGLAS DE NEGOCIO,
 asegurando que tu aplicación sea flexible, escalable y fácil de mantener 
-a medida que evolucionan las necesidades de la empresa o situación que estás abordando.\n\n";
+a medida que evolucionen las necesidades de la empresa o situación que estés abordando.\n\n";
 
-echo "En resumen, la Arquitectura es decidir qué archivos van en qué carpetas para que no se mezclen 
-el \"qué\" y el \"por qué\" (las reglas de negocio) 
-con el \"cómo\" (el código de PHP, bibliotecas, conexiones a bases de datos y demás herramientas).\n\n";
+echo "En resumen, la ARQUITECTURA DE SOFTWARE es decidir qué archivos van en qué carpetas para que no se mezclen 
+el \"qué\" y el \"por qué\" (las REGLAS DE NEGOCIO) 
+con el \"cómo\" (el código de PHP, BIBLIOTECAS, CONEXIONES A BASES DE DATOS y demás herramientas).\n\n";
 
-echo "Dado que usarás Laravel o Symfony de la forma \"estándar\", 
+echo "Dado que usarás LARAVEL o SYMFONY de la forma \"estándar\", 
 estarás usando una arquitectura MVC (Modelo-Vista-Controlador), 
 que es más sencilla pero suele \"ensuciarse\" más rápido si el proyecto crece mucho.\n\n";
 
-echo "Si estás aprendiendo PHP y vas a usar Laravel, 
+echo "Si estás aprendiendo PHP y vas a usar LARAVEL, 
 no intentes implementar Clean Architecture pura desde el día uno, 
-porque Laravel está diseñado para ser ágil y a veces esas arquitecturas \"chocan\" con su filosofía.\n\n";
+porque LARAVEL está diseñado para ser ágil y a veces esas arquitecturas \"chocan\" con su filosofía.\n\n";
 
-echo "Haz esto (Arquitectura Orientada al Dominio simplificada):
+echo "Haz esto (ARQUITECTURA ORIENTADA AL DOMINIO SIMPLIFICADA):
 1. Sigue el MVC de Laravel para cosas sencillas (CRUDS básicos).
-2. Usa \"Service Classes\": Si tienes una regla de negocio compleja (ej. calcular un préstamo), 
+2. Usa \"Service Classes\": Si tienes una REGLAS DE NEGOCIO compleja (ej. calcular un préstamo), 
 no la pongas en el Controlador. Crea una carpeta app/Services y pon ahí la lógica en PHP puro.
-3. Usa \"Repositories\": Si sientes que tus Modelos tienen demasiado código de consultas SQL, 
+3. Usa \"Repositories\": Si sientes que tus MODELOS tienen demasiado código de consultas SQL, 
 crea una capa de Repositorios para separar la base de datos de la lógica.\n\n";
