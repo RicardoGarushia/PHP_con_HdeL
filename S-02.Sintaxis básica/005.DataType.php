@@ -61,6 +61,44 @@ echo "El resultado de la función sumar() es: " . $resultado = sumar(5, 6) . "\n
 
 
 echo "\n======================================================================\n";
+echo "5.3.1 Modificadores de Declaración de Tipo (Nullable y Union Types)\n";
+echo "======================================================================\n\n";
+
+
+echo "\n======================================================================\n";
+echo "1. Tipos Nullable (?DataType) (PHP 7.1+):\n";
+echo "======================================================================\n\n";
+
+
+// El parámetro $monto admite float o null; el retorno admite string o null
+function formatearPrecio(?float $monto): ?string {
+    if ($monto === null) {
+        return null;
+    }
+    return "El precio formateado es: $" . number_format($monto, 2) . "\n\n";
+}
+
+echo formatearPrecio(100.50); // Muestra: $100.50
+echo formatearPrecio(null);   // Muestra nada (devuelve null)
+
+
+echo "\n======================================================================\n";
+echo "2. Tipos de Unión (Union Types) (TipoA|TipoB) (PHP 8.0+):\n";
+echo "======================================================================\n\n";
+
+
+
+// El parámetro $id admite int o string; el retorno es ninguno o vacío
+function procesarId(int|string $id): void {
+    echo "Procesando ID: $id que es del tipo de dato: " . gettype($id) . "\n\n";
+}
+
+procesarID("ABCD");
+
+
+
+
+echo "\n======================================================================\n";
 echo "5.4.1. Casting/Malabareo de Tipo Automático (Implicit Type Juggling)\n";
 echo "======================================================================\n\n";
 
