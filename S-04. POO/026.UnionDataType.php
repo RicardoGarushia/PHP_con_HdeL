@@ -3,6 +3,12 @@ declare(strict_types=1);
 
 header("Content-Type: text/plain; charset=utf-8");
 
+echo "======================================================================\n";
+echo "26. Tipos de Dato Unión (`Union Types`)\n";
+echo "======================================================================\n\n";
+
+// --- EJECUCIÓN DEL CÓDIGO REAL ---
+
 class CalculadoraImpuestoIVA {
     // Propiedad que acepta entero o flotante
     private int|float $monto;
