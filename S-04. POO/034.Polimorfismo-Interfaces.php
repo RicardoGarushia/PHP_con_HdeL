@@ -1,35 +1,3 @@
-# 34. POO: Polimorfismo basado en Interfaces
-
-## 34.1. ¿Qué es el Polimorfismo en Interfaces?
-
-El **polimorfismo en interfaces** ocurre cuando múltiples clases implementan una misma interfaz, obligando a cada una a proporcionar su propia versión ejecutable de los métodos definidos en dicho contrato.
-
-Incluso cuando las clases manejan **datos similares o relacionados** (como el nombre y precio de un ítem en un sistema de ventas), la forma en que procesan esos datos dentro del método garantizado por la interfaz responde a la lógica y naturaleza de cada entidad.
-
----
-
-## 34.2. Ventajas del Polimorfismo mediante Interfaces
-
-1. **Flexibilidad y Extensibilidad:** Permite escribir código genérico capaz de operar con cualquier objeto que cumpla el contrato sin preocuparse por la lógica interna de cada uno.
-2. **Desacoplamiento (Decoupling):** El código consumidor (funciones o servicios de cobro) solo interactúa con la interfaz y no depende de clases concretas.
-3. **Mantenibilidad:** Si mañana agregas un nuevo tipo de producto (por ejemplo: *ProductoSubastado*), solo debes crear la clase e implementar la interfaz sin tocar la función consumidora existente.
-
----
-
-## 34.3. Comparativa: Herencia vs. Interfaces
-
-| Criterio | Polimorfismo por Herencia | Polimorfismo por Interfaces |
-| :------- | :------------------------ | :-------------------------- |
-| **Relación entre Clases** | Es una relación *"Es un/a"* (e.g., `Triangulo` *"es una"* `FormaGeometrica`). | Es una relación *"Cumple con / Puede hacer"* (e.g., `ProductoDigital` *"cumple con/puede entregar su información"*). |
-| **Acoplamiento** | Alto (las subclases dependen directamente de la superclase). | Bajo (las clases son independientes entre sí). |
-| **Herencia Múltiple** | No permitida (PHP solo admite herencia simple). | Permitida (una clase puede implementar múltiples interfaces). |
-| **Implementación** | Se logra mediante la **sobreescritura de métodos**. | Se logra mediante la **implementación de contratos** (interfaces). |
-
----
-
-## 34.4. Ejemplo Práctico (`034.Polimorfismo-Interfaces.php`)
-
-```php
 <?php
 declare(strict_types=1);
 
@@ -66,6 +34,7 @@ class ProductoFisico implements GetInfo
 
     public function getInfo(): string {
         $total = $this->precioBase + $this->costoEnvio;
+
         return "Producto Físico: {$this->nombre} | Base: $" . number_format($this->precioBase, 2) .
                " | Envío: $" . number_format($this->costoEnvio, 2) .
                " | Total: $" . number_format($total, 2) . "\n";
@@ -88,6 +57,7 @@ class ProductoDigital implements GetInfo
     public function getInfo(): string {
         $porcentajeDescuento = $this->precioBase * $this->descuento;
         $total = $this->precioBase - $porcentajeDescuento;
+
         return "Producto Digital: {$this->nombre} | Base: $" . number_format($this->precioBase, 2) .
                " | Descuento (" . ($this->descuento * 100) . "%): -$" . number_format($porcentajeDescuento, 2) .
                " | Total: $" . number_format($total, 2) . "\n";
@@ -111,6 +81,7 @@ class ServicioSuscripcion implements GetInfo
     public function getInfo(): string
     {
         $total = $this->precioBase * $this->meses;
+
         return "Suscripción: {$this->nombre} | Cuota Mensual: $" . number_format($this->precioBase, 2) .
                " | Periodo: {$this->meses} mes(es)" .
                " | Total Plan: $" . number_format($total, 2) . "\n";
@@ -142,27 +113,28 @@ mostrarInformacion($teclado);
 mostrarInformacion($cursoOnline);
 mostrarInformacion($servidor);
 */
-```
 
----
 
-## 34.6. Análisis Técnico del Ejemplo
+// ACTIVIDAD: Agrega una cuarta clase llamada `ProductoOferta` que reciba un precio base y un cupón de descuento de monto fijo.
+// La clase ProductoOferta utiliza la Promoción de Propiedades en el Constructor (Constructor Property Promotion) {véase 21.3.2. Sintaxis Promocionada (PHP 8.0+)} 
+// reduciendo la declaración e inicialización de $nombre, $precioBase y $cuponDescuento directamente en los parámetros del __construct().
+class ProductoOferta implements GetInfo
+{
+    public function __construct(
+        private string $nombre,
+        private float $precioBase,
+        private float $cuponDescuento
+        )   {
+            // El cuerpo del constructor puede quedar vacío
+    }
 
-- **Atributos Compartidos, Lógica Distinta:** Tanto `ProductoFisico`, `ProductoDigital` como `ServicioSuscripcion` poseen las propiedades `$nombre` y `$precioBase`. Sin embargo, `ProductoFisico` le suma el envío, `ProductoDigital` le descuenta un porcentaje y `ServicioSuscripcion` lo multiplica por el número de meses.
-- **Type Hinting Estricto:** La función `mostrarInformacion(GetInfo $objeto)` exige únicamente que el parámetro recibido cumpla con la interfaz `GetInfo`.
-- **Resolución en Tiempo de Ejecución:** La función no tiene que evaluar mediante `if` o `switch` qué tipo de producto es; PHP ejecuta automáticamente el método `getInfo()` correspondiente al objeto enviado
+    public function getInfo(): string
+    {
+        $total = $this->precioBase - $this->cuponDescuento;
 
----
-
-## Referencias
-
-- **Documentación Oficial de PHP:** [Interfaces de Objetos](https://www.php.net/manual/es/language.oop5.interfaces.php)
-- **Documentación Oficial de PHP:** [Declaraciones de Tipos/Type Hinting](https://www.php.net/manual/es/language.types.declarations.php)
-
----
-
-## Actividades
-
-- Ejecuta _034.PolimorfismoInterfaces.php_ en tu entorno local.
-- Agrega una cuarta clase llamada `ProductoOferta` que reciba un precio base y un cupón de descuento de monto fijo.
-- Pasa una instancia de `ProductoOferta` a la función `mostrarInformacion()` para comprobar cómo el sistema procesa el nuevo tipo de objeto sin cambiar el código de la función consumidora.
+        return "Producto Oferta: {$this->nombre} | Base: $" . number_format($this->precioBase, 2) .
+               " | Cupón de Descuento: -$" . number_format($this->cuponDescuento, 2) .
+               " | Total: $" . number_format($total, 2) . "\n";
+    }
+}
+mostrarInformacion(new ProductoOferta("Mayonesa", 80.00, 20.00));

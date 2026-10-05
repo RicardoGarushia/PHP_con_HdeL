@@ -2,7 +2,7 @@
 header("Content-Type: text/plain; charset=utf-8");
 
 echo "======================================================================\n";
-echo "22. POO: Constructores Explícitos y Promoción de Propiedades (PHP 8.0+)\n";
+echo "21. POO: Constructores Explícitos y Promoción de Propiedades (PHP 8.0+)\n";
 echo "======================================================================\n\n";
 
 // --- EJECUCIÓN DEL CÓDIGO REAL ---
